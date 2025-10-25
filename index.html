@@ -13,7 +13,7 @@
     }
 
     body {
-      background-color: #f7f9fc;
+      background: linear-gradient(to bottom right, #eef3ff, #ffffff);
       color: #222;
       line-height: 1.6;
     }
@@ -25,11 +25,27 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     header h1 {
       color: #007bff;
       font-size: 28px;
+    }
+
+    header a {
+      background: #007bff;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      background: #0056b3;
     }
 
     section {
@@ -39,7 +55,7 @@
     .hero {
       text-align: center;
       padding-top: 100px;
-      padding-bottom: 100px;
+      padding-bottom: 60px;
     }
 
     .hero h2 {
@@ -70,8 +86,30 @@
       background: #0056b3;
     }
 
+    /* Motivation Section */
+    .motivation {
+      text-align: center;
+      margin-top: 60px;
+      min-height: 60px;
+    }
+
+    .quote {
+      display: none;
+      font-size: 20px;
+      color: #333;
+      font-weight: 600;
+      transition: opacity 1s;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .team {
       text-align: center;
+      margin-top: 80px;
     }
 
     .team h3 {
@@ -96,6 +134,11 @@
       width: 300px;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     .contact {
@@ -137,6 +180,9 @@
 <body>
   <header>
     <h1>Seizure Track</h1>
+    <a href="https://docs.google.com/spreadsheets/d/1jTM7E0reqS-xdKfbkhiMNSLWz5VQXJzqVobOpqvg-44/edit?gid=0#gid=0" target="_blank">
+      📊 Results Sheet
+    </a>
   </header>
 
   <section class="hero">
@@ -150,14 +196,22 @@
        target="_blank" class="btn">View Project Results</a>
   </section>
 
+  <!-- Motivational Quotes Section -->
+  <div class="motivation">
+    <p class="quote">"You are strong, not broken."</p>
+    <p class="quote">"You are different, and that’s your power."</p>
+    <p class="quote">"You deserve peace, comfort, and care."</p>
+    <p class="quote">"لستَ ضعيفًا، بل قوي بما مررت به."</p>
+    <p class="quote">"اختلافك هو ما يجعلك مميزًا."</p>
+    <p class="quote">"أنت تستحق الراحة والأمان."</p>
+  </div>
+
   <section class="team">
     <h3>Project Team</h3>
     <p><strong>Ahmed Hesham</strong> & <strong>Khairy Mohamed</strong></p>
   </section>
 
   <section class="gallery">
-    <!-- Add your project images here -->
-    <!-- Example placeholders -->
     <img src="https://via.placeholder.com/300x200" alt="Project Image 1">
     <img src="https://via.placeholder.com/300x200" alt="Project Image 2">
     <img src="https://via.placeholder.com/300x200" alt="Project Image 3">
@@ -176,5 +230,24 @@
   <footer>
     <p>© 2025 Seizure Track | All Rights Reserved</p>
   </footer>
+
+  <script>
+    const quotes = document.querySelectorAll('.quote');
+    let index = 0;
+
+    function showNextQuote() {
+      quotes.forEach(q => q.style.display = 'none');
+      quotes[index].style.display = 'block';
+      index = (index + 1) % quotes.length;
+    }
+
+    showNextQuote();
+    setInterval(showNextQuote, 4000);
+  </script>
 </body>
 </html>
+
+  </footer>
+</body>
+</html>
+
