@@ -28,18 +28,21 @@
   <iframe id="sheet"></iframe>
 
   <script>
-    // الحساب المخزن في الكود
-    const user = {
-      email: "khairymhmd42@gmail.com",
-      password: "khairy01123"
-    };
+    // الحسابات المخزنة في الكود
+    const users = [
+      { email: "khairymhmd42@gmail.com", password: "khairy01123" },
+      { email: "ahmed.hesham.alhelaly2008@gmail.com", password: "ahmedhesham01123" }
+    ];
 
     function login() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       const msg = document.getElementById("msg");
 
-      if(email === user.email && password === user.password) {
+      // التحقق من الحسابات
+      const validUser = users.find(user => user.email === email && user.password === password);
+
+      if(validUser) {
         // Hide login box
         document.querySelector('.login-box').style.display = 'none';
         // Show Google Sheet
@@ -53,3 +56,4 @@
   </script>
 </body>
 </html>
+
