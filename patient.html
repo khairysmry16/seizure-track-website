@@ -6,18 +6,50 @@
   <title>Patient Dashboard | Seizure Track</title>
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif;}
-    body {background-color: #eef3f8; color: #333; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;}
+    body {background-color: #eef3f8; color: #333; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;}
     h2 {color: #007bff; margin-bottom: 20px;}
-    .login-box, .dashboard {background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); width: 320px; text-align: center;}
+    .login-box {background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); width: 320px; text-align: center;}
     input {width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc;}
-    button {width: 100%; background: #007bff; color: #fff; padding: 10px; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; margin-top:10px;}
+    button {width: 100%; background: #007bff; color: #fff; padding: 10px; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s;}
     button:hover {background: #0056b3;}
-    iframe {width: 90%; height: 500px; border: none; margin-top: 30px; border-radius: 12px;}
-    .message {margin-top: 15px; color: #555; font-size: 14px; animation: fadeIn 3s ease-in-out infinite alternate;}
-    @keyframes fadeIn {from {opacity: 0.4;} to {opacity: 1;}}
+    iframe {width: 90%; height: 500px; border: none; margin-top: 30px; border-radius: 12px; display:none;}
+    .message {margin-top: 15px; color: red; font-size: 14px;}
   </style>
 </head>
 <body>
-
   <div class="login-box">
-    <h2>Patient Login</
+    <h2>Patient Login</h2>
+    <input type="email" placeholder="Enter your email" id="email">
+    <input type="password" placeholder="Enter your password" id="password">
+    <button onclick="login()">Login</button>
+    <p class="message" id="msg"></p>
+  </div>
+
+  <iframe id="sheet"></iframe>
+
+  <script>
+    // الحساب المخزن في الكود
+    const user = {
+      email: "khairymhmd42@gmail.com",
+      password: "khairy01123"
+    };
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const msg = document.getElementById("msg");
+
+      if(email === user.email && password === user.password) {
+        // Hide login box
+        document.querySelector('.login-box').style.display = 'none';
+        // Show Google Sheet
+        const sheet = document.getElementById('sheet');
+        sheet.src = "https://docs.google.com/spreadsheets/d/1jTM7E0reqS-xdKfbkhiMNSLWz5VQXJzqVobOpqvg-44/edit?usp=sharing";
+        sheet.style.display = "block";
+      } else {
+        msg.textContent = "Invalid email or password!";
+      }
+    }
+  </script>
+</body>
+</html>
