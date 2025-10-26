@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard | Seizure Track</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif;}
+    body {background-color: #eef3f8; color: #333; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;}
+    h2 {color: #007bff; margin-bottom: 20px;}
+    .login-box {background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); width: 320px; text-align: center;}
+    input {width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc;}
+    button {width: 100%; background: #007bff; color: #fff; padding: 10px; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s;}
+    button:hover {background: #0056b3;}
+    iframe {width: 90%; height: 500px; border: none; margin-top: 30px; border-radius: 12px;}
+    .message {margin-top: 15px; color: #555; font-size: 14px; animation: fadeIn 3s ease-in-out infinite alternate;}
+    @keyframes fadeIn {from {opacity: 0.4;} to {opacity: 1;}}
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Patient Login</h2>
+    <input type="email" placeholder="Enter your email" id="email">
+    <input type="password" placeholder="Enter your password" id="password">
+    <button onclick="showDashboard()">Login</button>
+    <p class="message">💙 You are not different, you are strong.</p>
+  </div>
+
+  <iframe id="sheet" src="" style="display:none;"></iframe>
+
+  <script>
+    function showDashboard() {
+      document.querySelector('.login-box').style.display = 'none';
+      const sheet = document.getElementById('sheet');
+      sheet.src = "https://docs.google.com/spreadsheets/d/1jTM7E0reqS-xdKfbkhiMNSLWz5VQXJzqVobOpqvg-44/edit?gid=0#gid=0";
+      sheet.style.display = "block";
+    }
+  </script>
+</body>
+</html>
