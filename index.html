@@ -1,90 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Motivation & Progress Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seizure Track | Smart Epilepsy Detection System</title>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #cce5ff, #e6f7ff);
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    header {
-      background: #007bff;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 1.8em;
-      letter-spacing: 1px;
-    }
-
-    .motto {
-      text-align: center;
-      margin: 40px 0;
-      font-size: 1.5em;
-      animation: fadeInOut 5s infinite alternate;
-      color: #004085;
-    }
-
-    @keyframes fadeInOut {
-      0% { opacity: 0.3; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(-5px); }
-    }
-
-    .results {
-      width: 100vw;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    iframe {
-      width: 95%;
-      height: 90%;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: #007bff;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-size: 1em;
-    }
-
-    footer p {
-      margin: 5px 0;
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif;}
+    body {background-color: #f7f9fc; color: #222; line-height: 1.6;}
+    header {background: #ffffff; padding: 20px 50px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 10;}
+    header h1 {color: #007bff; font-size: 28px;}
+    section {padding: 80px 10%;}
+    .hero {text-align: center; padding-top: 100px; padding-bottom: 100px;}
+    .hero h2 {font-size: 36px; color: #007bff; margin-bottom: 20px;}
+    .hero p {font-size: 18px; color: #555; max-width: 700px; margin: auto;}
+    .btn {display: inline-block; background: #007bff; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; margin-top: 25px; transition: 0.3s;}
+    .btn:hover {background: #0056b3;}
+    .team {text-align: center;}
+    .team h3 {font-size: 28px; color: #007bff; margin-bottom: 25px;}
+    .team p {font-size: 18px;}
+    .gallery {display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;}
+    .gallery img {width: 300px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);}
+    footer {background: #007bff; color: #fff; text-align: center; padding: 20px; margin-top: 60px;}
   </style>
 </head>
 <body>
   <header>
-    Progress Tracker Dashboard
+    <h1>Seizure Track</h1>
   </header>
 
-  <div class="motto">
-    <p>🌟 You are not different, you are special 🌟</p>
-    <p>💙 إنت مش مختلف، إنت مميز 💙</p>
-  </div>
+  <section class="hero">
+    <h2>Smart Detection for Epileptic Seizures</h2>
+    <p>
+      Seizure Track is an intelligent and affordable system that detects early
+      signs of epileptic seizures using smart sensors and AI. It helps save
+      lives by sending instant alerts to family members and doctors.
+    </p>
+    <a href="patient.html" class="btn">Go to Patient Dashboard</a>
+  </section>
 
-  <section class="results">
-    <iframe 
-      src="https://docs.google.com/spreadsheets/d/1jTM7E0reqS-xdKfbkhiMNSLWz5VQXJzqVobOpqvg-44/preview">
-    </iframe>
+  <section class="team">
+    <h3>Project Team</h3>
+    <p><strong>Ahmed Hesham</strong> — +20 102 403 6859</p>
+    <p><strong>Khairy Mohamed</strong> — +20 115 165 5495</p>
+  </section>
+
+  <section class="gallery">
+    <img src="https://via.placeholder.com/300x200" alt="Prototype">
+    <img src="https://via.placeholder.com/300x200" alt="Testing">
+    <img src="https://via.placeholder.com/300x200" alt="Team Work">
   </section>
 
   <footer>
-    <p>📞 Khairy Mohamed — +20 115 165 5495</p>
-    <p>📞 Ahmed Hesham — +20 102 403 6859</p>
+    <p>© 2025 Seizure Track | All Rights Reserved</p>
   </footer>
 </body>
 </html>
